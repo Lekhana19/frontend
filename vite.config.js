@@ -7,15 +7,12 @@ import react from '@vitejs/plugin-react';
 export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-  // const proxy_url =
-  //   process.env.VITE_DEV_REMOTE === 'remote'
-  //     ? process.env.VITE_BACKEND_SERVER
-  //     : 'http://65.0.182.153:8888/';
+
 
   const proxy_url =
     process.env.VITE_DEV_REMOTE === 'remote'
       ? process.env.VITE_BACKEND_SERVER
-      : 'http://app.fitsync.cloud:8888/';
+      : 'https://api.fitsync.cloud/';
 
   const config = {
     plugins: [react()],
